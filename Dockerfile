@@ -10,7 +10,7 @@ COPY app/ /app
 # Install and set requirements
 RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
     apk update && \
-    apk add --no-cache postgresql-client lftp openssh-client bash && \
+    apk add --no-cache postgresql-client mysql-client curl bash && \
     rm -rf /var/cache/apk/* && \
     chmod g=u /etc/passwd && \
     /bin/mkdir -p /app/postgres-files &&\
